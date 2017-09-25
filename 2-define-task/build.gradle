@@ -4,9 +4,9 @@ println delegate.class.name
 }
 
 
-task hello2 {
+task hello2 (dependsOn: hello1){
 doLast {
-println 'hello2'}
+println 'hello3'}
 }
 
 
@@ -15,10 +15,6 @@ doLast {
 println 'hello3'}
 }
 
-task showTasks {
-println tasks.class
-println tasks.size()
-}
 
 task hello7 << {
 description = "this is hello7"
@@ -39,4 +35,12 @@ println description
 
 hello9.configure {
 description = "this is hello9"
+}
+
+
+
+
+task showTasks {
+    println tasks.class
+    println tasks.size()
 }
